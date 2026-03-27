@@ -11,6 +11,9 @@ import appointmentRouter from "./router/appointmentRouter.js";
 
 const app = express();
 dotenv.config({ path: "./config/config.env" });
+app.get("/", (req, res) => {
+  res.send("Hospital Management Backend Running");
+});
 
 app.use(
   cors({
