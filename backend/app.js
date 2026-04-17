@@ -21,7 +21,7 @@ app.use(
       const allowedOrigins = [
         process.env.FRONTEND_URL_ONE,
         process.env.FRONTEND_URL_TWO,
-        "https://hospital-management-system-plum-mu.vercel.app"
+        "https://hospital-management-system-plum-mu.vercel.app",
       ];
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
