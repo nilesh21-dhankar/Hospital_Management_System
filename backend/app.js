@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
 app.use(cors({
     origin: [
         "https://hospital-management-system-plum-mu.vercel.app",
+        "https://hospital-management-system-v8sn.vercel.app",
       ],
     methods: ["GET", "POST", "DELETE", "PUT", "PATCH", "OPTIONS"],
     credentials: true,
