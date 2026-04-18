@@ -15,25 +15,15 @@ app.get("/", (req, res) => {
   res.send("Hospital Management Backend Running");
 });
 
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      const allowedOrigins = [
-        process.env.FRONTEND_URL_ONE,
-        process.env.FRONTEND_URL_TWO,
+app.use(cors({
+    origin: [
         "https://hospital-management-system-plum-mu.vercel.app",
-      ];
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+      ],
     methods: ["GET", "POST", "DELETE", "PUT", "PATCH", "OPTIONS"],
     credentials: true,
   })
 );
-
+app.options("*", cors());
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
